@@ -37,6 +37,12 @@ except ImportError, e:
 
 import specparser
 
+# one day, OptionParser
+allow_externals = False
+if '--allow-externals' in sys.argv:
+    allow_externals = True
+    sys.argv.remove('--allow-externals')
+
 program, spec_file, output_path, project, namespace = sys.argv
 
 template_path = os.path.join(os.path.dirname(program), '../doc/templates')
@@ -68,7 +74,7 @@ def load_template(filename):
 
     return template_def
 
-spec = specparser.parse(spec_file, namespace)
+spec = specparser.parse(spec_file, namespace, allow_externals=allow_externals)
 
 # write out HTML files for each of the interfaces
 
@@ -98,6 +104,10 @@ def render_template(name, namespaces, target=None):
 
 namespaces = { 'spec': spec }
 
+if len(spec.generic_types) > 0:
+    render_template('generic-types.html', namespaces)
+if len(spec.errors) > 0:
+    render_template('errors.html', namespaces)
 render_template('interfaces.html', namespaces)
 render_template('fullindex.html', namespaces)
 
