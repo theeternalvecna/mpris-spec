@@ -64,6 +64,10 @@
           2011-11-04: Clarified the type of the mpris:trackid entry in the
           Metadata property of the Player interface.
         </li>
+        <li>
+          2012-04-16: The suggested unique instance identifier no longer
+          violates the D-Bus specification by begining with a digit.
+        </li>
       </ul>
     </tp:docstring>
   </tp:section>
@@ -89,13 +93,22 @@
       <p>
         In the case where the media player allows multiple instances running
         simultaneously, each additional instance should request a unique bus
-        name, adding a dot and a unique identifier (such as a UNIX process
-        id) to its usual bus name. For example, this could be
+        name, adding a dot and a unique identifier to its usual bus name, such
+        as one based on a UNIX process id.
+
+        For example, this could be:
       </p>
 
       <ul>
-          <li>org.mpris.MediaPlayer2.vlc.7389</li>
+          <li>org.mpris.MediaPlayer2.vlc.instance7389</li>
       </ul>
+
+      <p>
+        Note: According to the <a href="http://dbus.freedesktop.org/doc/dbus-specification.html#message-protocol-names-bus">
+        D-Bus specification</a>, the unique identifier "must only contain the
+        ASCII characters '[A-Z][a-z][0-9]_-'" and "must not begin with a digit".
+      </p>
+
     </tp:docstring>
   </tp:section>
 
