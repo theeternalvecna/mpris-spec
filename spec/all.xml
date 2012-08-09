@@ -68,6 +68,10 @@
           2012-04-16: The suggested unique instance identifier no longer
           violates the D-Bus specification by begining with a digit.
         </li>
+        <li>
+          2012-08-07: Clarified behaviour of the Play method
+          of the Player interface when paused.
+        </li>
       </ul>
     </tp:docstring>
   </tp:section>
