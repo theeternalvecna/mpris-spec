@@ -322,6 +322,7 @@
     <property name="LoopStatus" type="s" access="readwrite"
               tp:name-for-bindings="Loop_Status" tp:type="Loop_Status">
       <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
+      <annotation name="org.mpris.MediaPlayer2.property.optional" value="true"/>
       <tp:docstring xmlns="http://www.w3.org/1999/xhtml">
         <p>The current loop / repeat status</p>
         <p>May be:
@@ -330,10 +331,6 @@
             <li>"Track" if the current track will start again from the begining once it has finished playing</li>
             <li>"Playlist" if the playback loops through a list of tracks</li>
           </ul>
-        </p>
-        <p>
-          This property is optional, and clients should deal with NotSupported
-          errors gracefully.
         </p>
         <p>
           If <tp:member-ref>CanControl</tp:member-ref> is
@@ -382,15 +379,12 @@
 
     <property name="Shuffle" tp:name-for-bindings="Shuffle" type="b" access="readwrite">
       <annotation name="org.freedesktop.DBus.Property.EmitsChangedSignal" value="true"/>
+      <annotation name="org.mpris.MediaPlayer2.property.optional" value="true"/>
       <tp:docstring xmlns="http://www.w3.org/1999/xhtml">
         <p>
           A value of <strong>false</strong> indicates that playback is
           progressing linearly through a playlist, while <strong>true</strong>
           means playback is progressing through a playlist in some other order.
-        </p>
-        <p>
-          This property is optional, and clients should deal with NotSupported
-          errors gracefully.
         </p>
         <p>
           If <tp:member-ref>CanControl</tp:member-ref> is

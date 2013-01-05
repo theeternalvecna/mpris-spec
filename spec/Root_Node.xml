@@ -50,6 +50,8 @@
     </property>
 
     <property name="Fullscreen" type="b" tp:name-for-bindings="Fullscreen" access="readwrite">
+      <tp:added version="2.2" />
+      <annotation name="org.mpris.MediaPlayer2.property.optional" value="true"/>
       <tp:docstring xmlns="http://www.w3.org/1999/xhtml">
         <p>Whether the media player is occupying the fullscreen.</p>
         <p>
@@ -72,7 +74,6 @@
           may still be unable to fulfil the request, in which case attempting to set
           this property will have no effect (but should not raise an error).
         </p>
-        <p>This property is optional. Clients should handle its absence gracefully.</p>
         <tp:rationale>
           <p>
             This allows remote control interfaces, such as LIRC or mobile devices like
@@ -83,6 +84,8 @@
     </property>
 
     <property name="CanSetFullscreen" type="b" tp:name-for-bindings="Can_Set_Fullscreen" access="read">
+      <tp:added version="2.2" />
+      <annotation name="org.mpris.MediaPlayer2.property.optional" value="true"/>
       <tp:docstring xmlns="http://www.w3.org/1999/xhtml">
         <p>
           If <strong>false</strong>, attempting to set
@@ -139,6 +142,7 @@
     </property>
 
     <property name="DesktopEntry" type="s" tp:name-for-bindings="Desktop_Entry" access="read">
+      <annotation name="org.mpris.MediaPlayer2.property.optional" value="true"/>
       <tp:docstring xmlns="http://www.w3.org/1999/xhtml">
         <p>The basename of an installed .desktop file which complies with the <a href="http://standards.freedesktop.org/desktop-entry-spec/latest/">Desktop entry specification</a>,
         with the ".desktop" extension stripped.</p>
@@ -146,7 +150,6 @@
           Example: The desktop entry file is "/usr/share/applications/vlc.desktop",
           and this property contains "vlc"
         </p>
-        <p>This property is optional. Clients should handle its absence gracefully.</p>
       </tp:docstring>
     </property>
 

@@ -94,6 +94,7 @@
        <td>$property.get_flag_summary()</td>
        <td>
         #if $property.is_deprecated: (deprecated)
+        #if $property.is_optional: (optional)
        </td>
       </tr>
       #end for
@@ -416,6 +417,7 @@
      $property.get_added()
      $property.get_changed()
      $property.get_deprecated()
+     $property.get_optional()
 
      #if $property.emits_changed == $property.EMITS_CHANGED_UPDATES
      <div class="annotation emits-changed emits-changed-updates">

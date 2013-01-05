@@ -638,6 +638,8 @@ class Property(DBusConstruct, Typed):
         else:
             raise UnknownAccess("Unknown access '%s' on %s" % (access, self))
 
+        self.is_optional = (getAnnotationByName(dom, 'org.mpris.MediaPlayer2.property.optional') == 'true')
+
         is_cp = dom.getAttributeNS(XMLNS_TP, 'is-connection-parameter')
         self.is_connection_parameter = is_cp != ''
 
@@ -686,6 +688,12 @@ class Property(DBusConstruct, Typed):
             descriptions.append("Requestable")
 
         return ', '.join(descriptions)
+
+    def get_optional(self):
+        if self.is_optional:
+            return '<div class="annotation optional">This property is optional.  Clients should handle its absence gracefully.</div>'
+        else:
+            return ''
 
 class AwkwardTelepathyProperty(Typed):
     def get_type_name(self):
