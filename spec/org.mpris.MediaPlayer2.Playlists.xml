@@ -1,5 +1,5 @@
 <?xml version="1.0" ?>
-<node name="/Playlists" xmlns:tp="http://telepathy.freedesktop.org/wiki/DbusSpec#extensions-v0">
+<node name="/Playlists_Interface" xmlns:tp="http://telepathy.freedesktop.org/wiki/DbusSpec#extensions-v0">
   <interface name="org.mpris.MediaPlayer2.Playlists">
     <tp:added version="2.1" />
     <tp:docstring>
