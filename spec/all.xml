@@ -177,10 +177,10 @@
   </tp:section>
 
   <tp:section name="Interfaces">
-    <xi:include href="Root_Node.xml" />
-    <xi:include href="TrackList_Node.xml" />
-    <xi:include href="Player_Node.xml" />
-    <xi:include href="Playlists.xml" />
+    <xi:include href="org.mpris.MediaPlayer2.xml" />
+    <xi:include href="org.mpris.MediaPlayer2.Player.xml" />
+    <xi:include href="org.mpris.MediaPlayer2.TrackList.xml" />
+    <xi:include href="org.mpris.MediaPlayer2.Playlists.xml" />
   </tp:section>
 
 </tp:spec>
