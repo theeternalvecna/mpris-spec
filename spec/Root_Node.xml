@@ -81,6 +81,7 @@
     </property>
 
     <property name="DesktopEntry" type="s" tp:name-for-bindings="Desktop_Entry" access="read">
+      <annotation name="org.mpris.MediaPlayer2.property.optional" value="true"/>
       <tp:docstring xmlns="http://www.w3.org/1999/xhtml">
         <p>The basename of an installed .desktop file which complies with the <a href="http://standards.freedesktop.org/desktop-entry-spec/latest/">Desktop entry specification</a>,
         with the ".desktop" extension stripped.</p>
@@ -88,7 +89,6 @@
           Example: The desktop entry file is "/usr/share/applications/vlc.desktop",
           and this property contains "vlc"
         </p>
-        <p>This property is optional. Clients should handle its absence gracefully.</p>
       </tp:docstring>
     </property>
 
