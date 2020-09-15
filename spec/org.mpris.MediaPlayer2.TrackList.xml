@@ -60,7 +60,7 @@
           If there is an image associated with the track, a URL for it may be
           provided using the "mpris:artUrl" key.  For other metadata, fields
           defined by the
-          <a href="http://xesam.org/main/XesamOntology">Xesam ontology</a>
+          Xesam ontology
           should be used, prefixed by "xesam:".  See the
           <a href="http://www.freedesktop.org/wiki/Specifications/mpris-spec/metadata">metadata page on the freedesktop.org wiki</a>
           for a list of common fields.
