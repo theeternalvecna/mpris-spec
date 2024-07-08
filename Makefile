@@ -1,7 +1,7 @@
 all:
 
 INSTALL = install
-PYTHON = $(shell if python --version 2>&1 | grep "Python 3" >/dev/null 2>/dev/null; then echo python2; else echo python; fi)
+PYTHON = python3
 EGREP = egrep
 
 XMLS = $(wildcard spec/*.xml)
